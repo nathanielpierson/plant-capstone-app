@@ -13,4 +13,7 @@ Rails.application.routes.draw do
   # root "posts#index"
   get "/users" => "users#index"
   get "users/:id" => "users#show"
+
+  get "/plant" => "plants#inex"
+  get "plants/:id" => "plants#show"
 end
