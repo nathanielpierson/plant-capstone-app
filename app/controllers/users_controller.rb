@@ -7,11 +7,13 @@ class UsersController < ApplicationController
     @user = User.find_by(id: params[:id])
   end
   def create
-  @user = User.create(
-  name = params[:name],
-  email = params[:email],
-  password = params[:password],
-  image_url = params[:image_url]
+  @user = User.new(
+  name: params[:name],
+  email: params[:email],
+  password_digest: params[:password_digest],
+  image_url: params[:image_url]
   )
+  @user.save
+  render :show
   end
 end
