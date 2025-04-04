@@ -14,6 +14,6 @@ Rails.application.routes.draw do
   get "/users" => "users#index"
   get "users/:id" => "users#show"
 
-  get "/plant" => "plants#inex"
+  get "/plants" => "plants#index"
   get "plants/:id" => "plants#show"
 end
