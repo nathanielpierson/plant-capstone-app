@@ -19,4 +19,6 @@ Rails.application.routes.draw do
   get "plants/:id" => "plants#show"
 
   post "/schedule" => "schedule#create"
+
+  post "/sessions" => "sessions#create"
 end
