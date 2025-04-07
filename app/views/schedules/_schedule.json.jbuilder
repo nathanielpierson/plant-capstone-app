@@ -1,2 +1,3 @@
-json.extract! schedule, :id, :created_at, :updated_at
-json.url schedule_url(schedule, format: :json)
+json.user_id schedule.user_id
+json.plant_id schedule.plant_id
+json.watering_start_date schedule.watering_start_date

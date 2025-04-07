@@ -1,9 +1,19 @@
 class SchedulesController < ApplicationController
+  def index
+    @schedules = Schedule.all
+    render :index
+  end
+  def show
+    @schedule = Schedule.find_by(id: params[:id])
+    render :show
+  end
   def create
-    user = User.new(
+    @schedule = Schedule.new(
     plant_id: params[:plant_id],
     user_id: params[:user_id],
     watering_start_date: params[:watering_start_date]
     )
+    @schedule.save
+    render :show
   end
 end
