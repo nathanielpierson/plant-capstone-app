@@ -1,3 +1,3 @@
-json.user_id schedule.user_id
-json.plant_id schedule.plant_id
+json.user schedule.user
+json.plant schedule.plant
 json.watering_start_date schedule.watering_start_date
