@@ -1,3 +1,4 @@
+json.id plant.id
 json.name plant.name
 json.description plant.description
 json.amount_of_sun plant.amount_of_sun
