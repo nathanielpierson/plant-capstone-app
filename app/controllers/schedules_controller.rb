@@ -34,4 +34,9 @@ class SchedulesController < ApplicationController
     )
     render :show
   end
+  def delete
+    schedule = Schedule.find_by(id: params[:id])
+    schedule.delete
+    render json: "schedule deleted"
+  end
 end
