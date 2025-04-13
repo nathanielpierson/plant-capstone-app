@@ -16,20 +16,20 @@ class SchedulesController < ApplicationController
     )
     @schedule.save
     @schedule.update(
-      watering_start_date: @schedule.created_at
+      last_watered_date: @schedule.created_at
     )
     render :show
   end
   def update
     @schedule = Schedule.find_by(id: params[:id])
-    water_date = @schedule.watering_start_date
+    water_date = @schedule.last_watered_date
     today_date = Date.current.to_datetime
     diff = hours = (((water_date - today_date) / 1.hour).round) * -1
 
     p diff
     @schedule.update(
       plant_id: params[:plant_id] || @schedule.plant_id,
-      watering_start_date: Date.today,
+      last_watered_date: Date.today,
       time_changed: diff
     )
     render :show

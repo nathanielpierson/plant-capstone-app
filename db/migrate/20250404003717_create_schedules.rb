@@ -4,7 +4,7 @@ class CreateSchedules < ActiveRecord::Migration[8.0]
       t.integer :plant_id
       t.integer :user_id
       t.string :image_url
-      t.datetime :watering_start_date
+      t.datetime :last_watered_date
 
       t.timestamps
     end

@@ -16,5 +16,6 @@ class PlantsController < ApplicationController
       days_to_water: params[:days_to_water] || @plant.days_to_water,
       growth_req: params[:growth_req] || @plant.growth_req
     )
+    render :show
   end
 end
