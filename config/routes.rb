@@ -16,7 +16,10 @@ Rails.application.routes.draw do
   post "/users" => "users#create"
 
   get "/plants" => "plants#index"
-  get "plants/:id" => "plants#show"
+  get "/plants/:id" => "plants#show"
+  post "/plants" => "plants#create"
+  patch "/plants/:id" => "plants#update"
+  delete "/plants/:id" => "plants#delete"
 
   get "/schedules" => "schedules#index"
   get "/schedules/:id" => "schedules#show"
