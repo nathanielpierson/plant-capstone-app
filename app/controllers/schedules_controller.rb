@@ -22,22 +22,28 @@ class SchedulesController < ApplicationController
   end
   def update
     @schedule = Schedule.find_by(id: params[:id])
-    water_date = @schedule.last_watered_date
-    today_date = Date.current.to_datetime
-    diff = hours = (((water_date - today_date) / 1.hour).round) * -1
 
-    p diff
+    p "diff is " + diff.to_s
     @schedule.update(
       plant_id: params[:plant_id] || @schedule.plant_id,
-      last_watered_date: Date.today,
-      time_changed: diff,
+      time_changed: (Date.current - Date.parse("2000-01-01")).to_i,
+      # last_watered_date: Date.today,
+      growth_status: @schedule.growth_status + 1
     )
-    growth_status.increment!
     render :show
+  end
+  def water
   end
   def delete
     schedule = Schedule.find_by(id: params[:id])
     schedule.delete
     render json: "schedule deleted"
+  end
+  def reset
+    @schedules=Schedule.all
+    @schedules.update(
+    last_watered_date: "2000-01-01 00:00:00",
+    time_changed: (Date.current - Date.parse("2000-01-01")).to_i
+      )
   end
 end
