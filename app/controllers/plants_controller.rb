@@ -1,3 +1,6 @@
+# days_to_water is a static number that represents the time gap between needing to water a specific plant
+# growth_req is a static number that represents the base amount of times you need to water the plant until it is fully grown
+
 class PlantsController < ApplicationController
   def index
     @plants = Plant.all

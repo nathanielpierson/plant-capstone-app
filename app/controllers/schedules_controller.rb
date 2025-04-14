@@ -30,8 +30,9 @@ class SchedulesController < ApplicationController
     @schedule.update(
       plant_id: params[:plant_id] || @schedule.plant_id,
       last_watered_date: Date.today,
-      time_changed: diff
+      time_changed: diff,
     )
+    growth_status.increment!
     render :show
   end
   def delete
