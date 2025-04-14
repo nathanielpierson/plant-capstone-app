@@ -23,16 +23,19 @@ class SchedulesController < ApplicationController
   def update
     @schedule = Schedule.find_by(id: params[:id])
 
-    p "diff is " + diff.to_s
     @schedule.update(
       plant_id: params[:plant_id] || @schedule.plant_id,
       time_changed: (Date.current - Date.parse("2000-01-01")).to_i,
-      # last_watered_date: Date.today,
+      )
+      render :show
+    end
+    def water
+      @schedule = Schedule.find_by(id: params[:id])
+      @schedule.update(
+      last_watered_date: Date.today,
       growth_status: @schedule.growth_status + 1
-    )
-    render :show
-  end
-  def water
+      )
+      render :show
   end
   def delete
     schedule = Schedule.find_by(id: params[:id])
