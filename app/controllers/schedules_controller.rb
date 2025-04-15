@@ -12,7 +12,8 @@ class SchedulesController < ApplicationController
   def create
     @schedule = Schedule.new(
     plant_id: params[:plant_id],
-    user_id: params[:user_id]
+    user_id: params[:user_id],
+    growth_status: 0
     )
     @schedule.save
     @schedule.update(

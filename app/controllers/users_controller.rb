@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     p current_user
   end
   def show
-    @user = User.find_by(id: params[:id])
+    @user = User.find_by(id: current_user.id)
   end
   def create
     user = User.new(
