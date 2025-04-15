@@ -22,13 +22,12 @@ Rails.application.routes.draw do
   delete "/plants/:id" => "plants#delete"
 
   get "/schedules" => "schedules#index"
-  put "schedules/:id/water" => "schedules#water"
   get "/schedules/:id" => "schedules#show"
   post "/schedules" => "schedules#create"
-  patch "/schedules/:id" => "schedules#update"
-  patch "/reset" => "schedules#reset"
-  put "/schedules/:id" => "schedules#update"
+  put "schedules/:id/water" => "schedules#water"
+  put "/schedules" => "schedules#update"
   delete "/schedules/:id" => "schedules#delete"
+  patch "/reset" => "schedules#reset"
 
   post "/sessions" => "sessions#create"
 end

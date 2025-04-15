@@ -21,14 +21,23 @@ class SchedulesController < ApplicationController
     render :show
   end
   def update
-    @schedule = Schedule.find_by(id: params[:id])
-
-    @schedule.update(
-      plant_id: params[:plant_id] || @schedule.plant_id,
-      time_changed: (Date.current - Date.parse("2000-01-01")).to_i,
-      )
-      render :show
+    x = 0
+    while x < Schedule.last.id + 1
+      if Schedule.find_by(id: x) != nil
+        @schedule = Schedule.find_by(id: x)
+        p "before"
+        p @schedule
+        @schedule.update(
+          time_changed: (Date.current - Date.parse(@schedule.last_watered_date.to_s)).to_i
+            # time_changed: @schedule.time_changed+1
+          )
+          p "after"
+          p @schedule
+      end
+        x += 1
     end
+    render :show
+  end
     def water
       @schedule = Schedule.find_by(id: params[:id])
       @schedule.update(
