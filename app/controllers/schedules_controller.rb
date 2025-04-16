@@ -29,7 +29,7 @@ class SchedulesController < ApplicationController
         p "before"
         p @schedule
         @schedule.update(
-          time_changed: (Date.current - Date.parse(@schedule.last_watered_date.to_s)).to_i
+          time_changed: (Date.current - Date.parse(@schedule.last_watered_date.to_s)).to_i * 24
             # time_changed: @schedule.time_changed+1
           )
           p "after"
