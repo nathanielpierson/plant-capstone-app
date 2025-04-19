@@ -2,18 +2,26 @@ include ActionView::Helpers::DateHelper
 
 class SchedulesController < ApplicationController
   def index
-    @schedules = current_user.schedules
+    @schedules = current_user.schedules.where(status: false)
     render :index
   end
+
   def show
     @schedule = Schedule.find_by(id: params[:id])
     render :show
   end
+
+  def show_of_plant
+    @schedules = Schedule.where(plant_id: params[:plant_id], status: false, user_id: current_user.id)
+    render :index
+  end
+
   def create
     @schedule = Schedule.new(
     plant_id: params[:plant_id],
-    user_id: params[:user_id],
-    growth_status: 0
+    user_id: current_user.id,
+    growth_status: 0,
+    status: false
     )
     @schedule.save
     @schedule.update(
@@ -21,37 +29,42 @@ class SchedulesController < ApplicationController
     )
     render :show
   end
+
   def update
     x = 0
     while x < Schedule.last.id + 1
       if Schedule.find_by(id: x) != nil
         @schedule = Schedule.find_by(id: x)
-        p "before"
-        p @schedule
         @schedule.update(
           time_changed: (Date.current - Date.parse(@schedule.last_watered_date.to_s)).to_i * 24
             # time_changed: @schedule.time_changed+1
           )
-          p "after"
-          p @schedule
       end
         x += 1
     end
     render :show
   end
-    def water
-      @schedule = Schedule.find_by(id: params[:id])
+
+  def water
+    @schedule = Schedule.find_by(id: params[:id])
+    @schedule.update(
+    last_watered_date: Date.today,
+    growth_status: @schedule.growth_status + 1
+    )
+    if @schedule.growth_status == @schedule.plant.growth_req
       @schedule.update(
-      last_watered_date: Date.today,
-      growth_status: @schedule.growth_status + 1
+        status: true
       )
-      render :show
+    end
+    render :show
   end
+
   def delete
     schedule = Schedule.find_by(id: params[:id])
     schedule.delete
     render json: "schedule deleted"
   end
+
   def reset
     @schedules=Schedule.all
     @schedules.update(

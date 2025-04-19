@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   get "/users" => "users#index"
-  get "/users/:id" => "users#show"
+  get "/users/current" => "users#show"
   post "/users" => "users#create"
 
   get "/plants" => "plants#index"
@@ -22,10 +22,11 @@ Rails.application.routes.draw do
   delete "/plants/:id" => "plants#delete"
 
   get "/schedules" => "schedules#index"
+  get "/schedules/plant/:id" => "schedules#show_of_plant"
   get "/schedules/:id" => "schedules#show"
   post "/schedules" => "schedules#create"
-  put "schedules/:id/water" => "schedules#water"
   put "/schedules" => "schedules#update"
+  put "schedules/:id/water" => "schedules#water"
   delete "/schedules/:id" => "schedules#delete"
   patch "/reset" => "schedules#reset"
 
