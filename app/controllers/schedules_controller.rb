@@ -66,10 +66,15 @@ class SchedulesController < ApplicationController
   end
 
   def reset
-    @schedules=Schedule.all
+    # for testing; resets all schedules to have been last watered a very long time ago. May not be useful anymore but worth keeping until I'm sure.
+    @schedules = Schedule.all
     @schedules.update(
     last_watered_date: "2000-01-01 00:00:00",
     time_changed: (Date.current - Date.parse("2000-01-01")).to_i
       )
+  end
+  def count
+    # the amount of the specified plant (in request after "count/") that are active (not finished growing)
+    p "there are #{Schedule.where(plant_id: params[:plant_id], status: false).length} active #{Plant.find_by(id: params[:plant_id]).name} schedules"
   end
 end
