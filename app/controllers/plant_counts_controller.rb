@@ -1,12 +1,21 @@
 class PlantCountsController < ApplicationController
   def index
-    Plant_count.all
+    PlantCount.all
+    p PlantCount.all
     render :index
   end
   def update
-    @plant_count = Plant_count.find_by(id: params[:id])
-    @plant_count.update (
-
+    @plant_count = PlantCount.find_by(id: params[:id])
+    plant = Schedule.where(plant_id: @plant_count.plant_id, user_id: current_user, status: true)
+    x = plant.length
+    @plant_count.update(
+      user_id: params[:user_id] || @plant_count.user_id,
+      plant_id: params[:plant_id] || @plant_count.plant_id,
+      count: x
     )
+    p "plant is #{plant}, plant_count is #{@plant_count}"
+    p "plant dot length is #{x}"
+    p current_user
+    render :show
   end
 end

@@ -75,7 +75,7 @@ class SchedulesController < ApplicationController
   end
   def count
     # the amount of the specified plant (in request after "count/") that are active (not finished growing)
-    count = "there are #{Schedule.where(plant_id: params[:plant_id], status: false).length} active #{Plant.find_by(id: params[:plant_id]).name} schedules"
+    p "there are #{Schedule.where(plant_id: params[:plant_id], status: false).length} active #{Plant.find_by(id: params[:plant_id]).name} schedules"
     render :show
   end
 end

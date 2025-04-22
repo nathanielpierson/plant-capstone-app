@@ -30,7 +30,8 @@ Rails.application.routes.draw do
   delete "/schedules/:id" => "schedules#delete"
   patch "/reset" => "schedules#reset"
 
-  get "/count/:plant_id" => "schedules#count"
+  get "/plant_counts" => "plant_counts#index"
+  put "/plant_counts/:id" => "plant_counts#update"
 
   post "/sessions" => "sessions#create"
 end
