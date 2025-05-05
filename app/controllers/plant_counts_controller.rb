@@ -40,7 +40,8 @@ class PlantCountsController < ApplicationController
         y = 0
         while y <= plant.id
           fetch_plant = Plant.find_by(id: y)
-          if fetch_plant != nil
+          already_exist = PlantCount.where(user_id: x, plant_id: y)
+          if fetch_plant != nil && already_exist == []
           @plant_count = PlantCount.create(
             user_id: x,
             plant_id: y,
