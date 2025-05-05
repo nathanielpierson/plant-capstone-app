@@ -4,6 +4,8 @@ class SchedulesController < ApplicationController
   def index
     @schedules = current_user.schedules.where(status: false)
     render :index
+  rescue NoMethodError
+    @schedules = []
   end
 
   def show
