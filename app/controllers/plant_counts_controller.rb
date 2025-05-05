@@ -1,11 +1,11 @@
 class PlantCountsController < ApplicationController
   def index
-    PlantCount.all
-    p PlantCount.all
+    @plant_counts = PlantCount.all
     render :index
   end
   def update
     @plant_count = PlantCount.find_by(id: params[:id])
+    # finds every instance of a schedule for this plant that is under the current user, i.e. all of current user's planted cabbages
     plant = Schedule.where(plant_id: @plant_count.plant_id, user_id: current_user, status: true)
     x = plant.length
     @plant_count.update(
