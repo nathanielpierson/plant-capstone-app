@@ -10,16 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_04_22_122334) do
+ActiveRecord::Schema[8.0].define(version: 2025_05_05_192244) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
   create_table "plant_counts", force: :cascade do |t|
     t.integer "plant_id"
     t.integer "user_id"
-    t.integer "count"
+    t.integer "count_finished"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "count_growing"
   end
 
   create_table "plants", force: :cascade do |t|

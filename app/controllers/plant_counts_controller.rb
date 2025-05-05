@@ -45,7 +45,8 @@ class PlantCountsController < ApplicationController
           @plant_count = PlantCount.create(
             user_id: x,
             plant_id: y,
-            count: Schedule.where(plant_id: y, user_id: x, status: true).length
+            count_finished: Schedule.where(plant_id: y, user_id: x, status: true).length,
+            count_growing: Schedule.where(plant_id: y, user_id: x, status: false).length
           )
           end
         y += 1
