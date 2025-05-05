@@ -34,4 +34,6 @@ Rails.application.routes.draw do
   put "/plant_counts/:id" => "plant_counts#update"
 
   post "/sessions" => "sessions#create"
+
+post "/test" => "plant_counts#create"
 end

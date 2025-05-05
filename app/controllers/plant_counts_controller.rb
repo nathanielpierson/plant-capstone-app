@@ -18,4 +18,40 @@ class PlantCountsController < ApplicationController
     p current_user
     render :show
   end
+  def update_all
+    user = User.last
+    x = 0
+    while x <= user.id
+      fetch_user = User.find_by(id: x)
+      if fetch_user != nil
+        p fetch_user.name
+      end
+      p x
+      x += 1
+    end
+  end
+  def create
+    user = User.last
+    x = 0
+    while x <= user.id
+      fetch_user = User.find_by(id: x)
+      if fetch_user != nil
+        plant = Plant.last
+        y = 0
+        while y <= plant.id
+          fetch_plant = Plant.find_by(id: y)
+          if fetch_plant != nil
+          @plant_count = PlantCount.create(
+            user_id: x,
+            plant_id: y,
+            count: Schedule.where(plant_id: y, user_id: x, status: true).length
+          )
+          end
+        y += 1
+        end
+      end
+      p x
+      x += 1
+    end
+  end
 end
