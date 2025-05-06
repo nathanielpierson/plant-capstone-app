@@ -6,3 +6,4 @@ json.days_to_water plant.days_to_water
 json.growth_req    plant.growth_req
 json.created_at    plant.created_at
 json.updated_at    plant.updated_at
+json.image_url     plant.image_url

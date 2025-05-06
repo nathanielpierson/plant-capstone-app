@@ -35,5 +35,5 @@ Rails.application.routes.draw do
 
   post "/sessions" => "sessions#create"
 
-post "/test" => "plant_counts#create"
+  post "/test" => "plant_counts#create"
 end
