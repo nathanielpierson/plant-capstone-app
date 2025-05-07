@@ -1,5 +1,5 @@
 json.id              plant_count.id
-json.plant_id        plant_count.plant_id
+json.plant           plant_count.plant
 json.user_id         plant_count.user_id
-json.count_planted   plant_count.count_planted
+json.count_growing   plant_count.count_growing
 json.count_finished  plant_count.count_finished

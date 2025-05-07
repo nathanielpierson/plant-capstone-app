@@ -1,6 +1,6 @@
 class PlantCountsController < ApplicationController
   def index
-    @plant_counts = PlantCount.all
+    @plant_counts = current_user.plant_counts
     render :index
   end
   def update
