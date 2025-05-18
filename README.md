@@ -48,6 +48,11 @@
    rails s
    ```
 
+3. **Clone the frontend repository**
+   ```bash
+   git clone https://github.com/nathanielpierson/plant-capstone-frontend
+   cd plant-capstone-frontend
+
 3. **Frontend setup**  
    ```bash
    cd frontend
@@ -70,8 +75,6 @@ Displays all of a user's currently growing plants, their growth stages, and wate
 Shows detailed information about a plant type, including its description, water needs, and sunlight requirements.
 
 ![Plant Detail Screenshot](./screenshots/Screenshot_plant_detail.png)
-
-> _Note: Be sure to rename and move the uploaded screenshots to a `screenshots/` folder in your repo to match these paths, or adjust the image links accordingly._
 
 ---
 
