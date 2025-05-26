@@ -162,7 +162,7 @@ Plant.create([
     amount_of_sun: 100,
     days_to_water: 30,
     growth_req: 3,
-    image_url: "https://images.unsplash.com/photo-1564869738398-0a707ba8eafc"
+    image_url: "https://www.parkseed.com/media/catalog/product/2/9/29377.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=740&width=740&canvas=740:740"
   },
   {
     name: "Cucumber",
@@ -170,7 +170,7 @@ Plant.create([
     amount_of_sun: 90,
     days_to_water: 2,
     growth_req: 6,
-    image_url: "https://images.unsplash.com/photo-1620503374953-8fc1f1ae86d3"
+    image_url: "https://i.ytimg.com/vi/OYZbTFXfuz4/maxresdefault.jpg"
   },
   {
     name: "Carrot",
@@ -178,7 +178,7 @@ Plant.create([
     amount_of_sun: 80,
     days_to_water: 3,
     growth_req: 7,
-    image_url: "https://images.unsplash.com/photo-1582515073490-39981397c445"
+    image_url: "https://i1.wp.com/blog.backtotheroots.com/wp-content/uploads/2021/02/image1-3.png?fit=1999%2C1274&ssl=1"
   },
   {
     name: "Tomato",
@@ -186,7 +186,7 @@ Plant.create([
     amount_of_sun: 95,
     days_to_water: 2,
     growth_req: 6,
-    image_url: "https://images.unsplash.com/photo-1567306226416-28f0efdc88ce"
+    image_url: "https://bittmanproject.com/wp-content/uploads/engin-akyurt-HrCatSbULFY-unsplash-scaled.jpg"
   },
   {
     name: "Lettuce",
@@ -194,7 +194,7 @@ Plant.create([
     amount_of_sun: 60,
     days_to_water: 2,
     growth_req: 4,
-    image_url: ""
+    image_url: "https://i0.wp.com/post.healthline.com/wp-content/uploads/2020/03/romaine-lettuce-1296x728-body.jpg?w=1155&h=1528"
   },
   {
     name: "Bell Pepper",
@@ -202,7 +202,7 @@ Plant.create([
     amount_of_sun: 85,
     days_to_water: 3,
     growth_req: 6,
-    image_url: ""
+    image_url: "https://healthyfamilyproject.com/wp-content/uploads/2020/05/Bell-Peppers-background.jpg"
   },
   {
     name: "Spinach",
@@ -210,7 +210,7 @@ Plant.create([
     amount_of_sun: 65,
     days_to_water: 3,
     growth_req: 4,
-    image_url: ""
+    image_url: "https://post.healthline.com/wp-content/uploads/2019/05/spinach-1296x728-header.jpg"
   },
   {
     name: "Zucchini",
@@ -218,7 +218,7 @@ Plant.create([
     amount_of_sun: 90,
     days_to_water: 3,
     growth_req: 5,
-    image_url: ""
+    image_url: "https://snaped.fns.usda.gov/sites/default/files/styles/crop_ratio_7_5/public/seasonal-produce/2018-05/zucchini.jpg.webp?itok=PH0PxpG4"
   },
   {
     name: "Strawberry",
@@ -226,7 +226,7 @@ Plant.create([
     amount_of_sun: 85,
     days_to_water: 2,
     growth_req: 5,
-    image_url: ""
+    image_url: "https://cdn.britannica.com/22/75922-050-D3982BD0/flowers-fruits-garden-strawberry-plant-species.jpg"
   },
   {
     name: "Basil",
@@ -234,7 +234,7 @@ Plant.create([
     amount_of_sun: 80,
     days_to_water: 3,
     growth_req: 3,
-    image_url: ""
+    image_url: "https://cdn.shopify.com/s/files/1/0586/9374/6850/files/Basil_Italian_2-min_480x480.jpg?v=1676385479"
   },
   {
     name: "Green Onion",
@@ -242,6 +242,6 @@ Plant.create([
     amount_of_sun: 70,
     days_to_water: 4,
     growth_req: 4,
-    image_url: ""
+    image_url: "https://www.foodandwine.com/thmb/g15c66LBVlkickty5gDSID7K8T0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/The-Difference-Between-Green-Onions-FT-4-BLOG0622-517221fbc44c42cd876524c1c291de4f.jpg"
   }
 ])
