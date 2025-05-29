@@ -14,4 +14,4 @@ test:
 
 production:
   <<: *default
-  # DATABASE_URL will be used in production
+  url: <%= ENV['DATABASE_URL'] %>
