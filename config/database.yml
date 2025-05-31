@@ -2,11 +2,10 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  url: <%= ENV['DATABASE_URL'] %>
 
 development:
   <<: *default
-  database: your_local_dev_db_name
+  database: plant_capstone_app_development
 
 test:
   <<: *default
