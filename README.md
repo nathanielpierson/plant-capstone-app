@@ -1,4 +1,4 @@
-NOTE: Deprecated; new version of code [here]([(https://github.com/nathanielpierson/plant-rebuild-api)])
+NOTE: Deprecated; new version of code [here]([url](https://github.com/nathanielpierson/plant-rebuild-api))
 
 
 # 🥗 Saladbar: The Plant Care App
