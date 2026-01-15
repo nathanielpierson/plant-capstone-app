@@ -1,3 +1,6 @@
+NOTE: Deprecated; new version of code [here]([url](https://github.com/nathanielpierson/plant-rebuild-api))
+https://github.com/nathanielpierson/plant-rebuild-api
+
 # 🥗 Saladbar: The Plant Care App
 
 **Saladbar** is a plant care simulator inspired by farming games, but with a more realistic twist. Users can create instances of plants, water them at specific intervals, and track their growth progress over time. The app also tracks how many of each plant type a user has successfully grown or currently has in progress.
